@@ -342,21 +342,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             item.zPosition = -50
             
             let random_y = CGFloat.random(in: item_lowest_y..<item_highest_y)
-            /*
-            let item_peach = SKSpriteNode(texture: itemTexture)
-            item_peach.position = CGPoint(x: 0, y: random_y)
-            item_peach.physicsBody = SKPhysicsBody(circleOfRadius: 1 * itemTexture.size().width / 6)
-            item_peach.physicsBody?.categoryBitMask = self.itemCategory
-            item_peach.physicsBody?.isDynamic = false
-            item.addChild(item_peach)
             
-            let itemScoreNode = SKNode()
-            itemScoreNode.physicsBody = SKPhysicsBody(circleOfRadius: 1 * itemTexture.size().width / 6)
-            itemScoreNode.physicsBody?.isDynamic = false
-            itemScoreNode.physicsBody?.categoryBitMask = self.scoreCategory
-            itemScoreNode.physicsBody?.contactTestBitMask = self.birdCategory
-            item.addChild(itemScoreNode)
-            */
             let itemScoreNode = SKSpriteNode(texture: itemTexture)
             itemScoreNode.position = CGPoint(x: 0, y: random_y)
             itemScoreNode.physicsBody = SKPhysicsBody(circleOfRadius: 1 * itemTexture.size().width / 6)
@@ -376,15 +362,4 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         itemNode.run(repeatForeverAnimation)
         
     }
-    /*
-    func playSound(name:String) {
-        let soundURL = Bundle.main.url(forResource: name, withExtension: "mp3")
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: soundURL!)
-            audioPlayer!.play()
-        } catch {
-           print("sound error")
-        }
-    }
-    */
 }
